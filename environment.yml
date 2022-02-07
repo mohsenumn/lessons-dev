@@ -1,0 +1,26 @@
+name: Lessons-dev MyBinder Test
+
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - gdal
+  - rise
+  - fiona  
+  - rasterio
+  
+  - pip:
+    - jupyter_contrib_nbextensions
+    - numpy
+    - pandas
+    - utm
+    - geopandas
+    - shapely
+    - folium
+    - pysal
+    - matplotlib
+    - matplotlib_scalebar
+    - osmnx
+    - earthpy
+    - ipyleaflet
