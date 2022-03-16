@@ -1,48 +1,22 @@
 # Install and enable notebook extensions
+# This command does not work in BinderHub
 jupyter contrib nbextension install --user
-jupyter nbextension enable init_cell/main
-jupyter nbextension enable python-markdown/main
-jupyter nbextension enable --py --sys-prefix ipyleaflet
+#
+#
+#jupyter nbextension install init_cell
+
+jupyter nbextension enable init_cell/main --user
+
+#jupyter nbextension install python-markdown
+
+jupyter nbextension enable python-markdown/main --user
 
 
-# Trust all Hour of CI notebooks to improve learner experience
-# This enables us to auto-run code, initialize Markdown/code cells, etc.
+# Used for mordecai package
+# python -m spacy download en_core_web_lg
 
-# Gateway Lesson
-for i in 1 2 3 4 5 6; do
-    jupyter trust gateway-lesson/gateway/gateway-$i.ipynb >> hci.log
-done
-jupyter trust gateway-lesson/gateway/gateway-exploration.ipynb >> hci.log
+# Microsoft TrueType core fonts, for the certificate
+#apt install ttf-mscorefonts-installer
 
-# Interdisciplinary Communication Lesson
-for i in 1 2 3 4 5; do
-    jupyter trust beginner-lessons/interdisciplinary-communication/ic-$i.ipynb >> hci.log 
-done
-jupyter trust beginner-lessons/interdisciplinary-communication/ic-exploration.ipynb >> hci.log 
-
-# Geospatial Data Lesson
-for i in 1 2 3 4 5 6; do
-    jupyter trust beginner-lessons/geospatial-data/gd-$i.ipynb >> hci.log
-done
-jupyter trust beginner-lessons/geospatial-data/gd-example_1.ipynb >> hci.log 
-jupyter trust beginner-lessons/geospatial-data/gd-example_2.ipynb >> hci.log 
-
-# Cyberinfrastructure Lesson
-for i in 1 2 3 4 5; do
-    jupyter trust beginner-lessons/cyberinfrastructure/cyberinfrastructure-$i.ipynb >> hci.log  
-done
-jupyter trust beginner-lessons/cyberinfrastructure/cyberinfrastructure-exploration.ipynb >> hci.log  
-
-
-# SMA Lesson
-for i in 1 2 3 4 5; do
-    jupyter trust beginner-lessons/spatial-modeling-analytics/sma-$i.ipynb >> hci.log  
-done
-
-jupyter trust beginner-lessons/spatial-modeling-analytics/try_it1_sma.ipynb
-jupyter trust beginner-lessons/spatial-modeling-analytics/try_it2_sma.ipynb
-jupyter trust beginner-lessons/spatial-modeling-analytics/sma-exploration.ipynb
-
-
-echo "Hour of CI Setup Complete!"
+sh setupHourofCI
 

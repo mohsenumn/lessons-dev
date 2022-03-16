@@ -1,6 +1,9 @@
+Intermediate Lessons:<br/>
+Geospatial Data: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mohsen-gis/lessons-dev/master?filepath=intermediate-lessons/geospatial-data/Welcome.ipynb)<br/>
+
+Intermediate Lessons:<br/>
 Spatial Modeling and Analytics: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mohsen-gis/lessons-dev/master?filepath=beginner-lessons/spatial-modeling-analytics/sma-1.ipynb)<br/>
 Computational Thinking Lesson: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mohsen-gis/lessons-dev/master?filepath=beginner-lessons/computational-thinking/Welcome.ipynb) <br/>
-Interdisciplinary Communication: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mohsen-gis/lessons-dev/master?filepath=beginner-lessons/interdisciplinary-communication/Welcome.ipynb)<br/>
 Geospatial Data: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mohsen-gis/lessons-dev/master?filepath=beginner-lessons/geospatial-data/Welcome.ipynb)<br/>
 Cyberinfrastructure Lesson: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mohsen-gis/lessons-dev/master?filepath=beginner-lessons/cyberinfrastructure/Welcome.ipynb) <br/>
 
