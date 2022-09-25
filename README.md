@@ -1,5 +1,5 @@
 Intermediate Lessons:<br/>
-Geospatial Data: [![Binder][https://github.com/mohsenumn/lessons-dev/raw/master/EmbeddedImage.png]](https://mybinder.org/v2/gh/mohsen-gis/lessons-dev/master?filepath=intermediate-lessons/geospatial-data/Welcome.ipynb)<br/>
+Geospatial Data: [![Binder]([https://github.com/mohsenumn/lessons/raw/master/supplementary/hippo-hci-tiny.png])](https://mybinder.org/v2/gh/mohsen-gis/lessons-dev/master?filepath=intermediate-lessons/geospatial-data/Welcome.ipynb)<br/>
 
 Intermediate Lessons:<br/>
 Spatial Modeling and Analytics: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mohsen-gis/lessons-dev/master?filepath=beginner-lessons/spatial-modeling-analytics/sma-1.ipynb)<br/>
