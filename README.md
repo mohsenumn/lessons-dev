@@ -9,7 +9,7 @@ Beginner Lessons &nbsp; &nbsp; &nbsp; &nbsp;
 <br>
 ### SMA
 <br>
-[`Try2 Server`](http://try.hourofci.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fhourofci%2Flessons&urlpath=tree%2Flessons%2Fbeginner-lessons%2Fspatial-modeling-analytics%2FWelcome.ipynb&branch=master)
+["Try2 Server"](http://try.hourofci.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fhourofci%2Flessons&urlpath=tree%2Flessons%2Fbeginner-lessons%2Fspatial-modeling-analytics%2FWelcome.ipynb&branch=master)
 
 <br>
 <a href = 
