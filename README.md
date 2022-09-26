@@ -4,6 +4,7 @@
 <tbody>
 <tr>
 <td>
+  
 ## Beginner Lessons  
   
 ### SMA  
@@ -33,6 +34,7 @@
 [Try2 Server](http://try.hourofci.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fhourofci%2Flessons&urlpath=tree%2Flessons%2Fbeginner-lessons%2Fspatial-thinking%2FWelcome.ipynb&branch=master)  
 [Binder Server](https://mybinder.org/v2/gh/hourofci/lessons/master?filepath=beginner-lessons/spatial-thinking/st-1.ipynb)</td>
 <td>
+  
 ## Intermediate Lessons  
   
 ### SMA  
