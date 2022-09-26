@@ -3,7 +3,8 @@
 <table>
 <tbody>
 <tr>
-<td>Beginner Lessons          
+<td>Beginner Lessons  
+  
 ### SMA  
   
 
