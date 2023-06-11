@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    .slider {
+      width: 300px;
+      margin-bottom: 20px;
+    }
+    .slider-label {
+      display: flex;
+      justify-content: space-between; 
+      font-weight: bold;
+    } 
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <div class="slider-label">
+      <span>Cost:</span>
+      <span id="curvature-weight-value">1</span>
+    </div>
+    <input type="range" id="curvature-weight" min="1" max="3" value="1" step="1">
+  </div>
+  <div class="slider">
+    <div class="slider-label">
+      <span>Distance:</span>
+      <span id="distance-weight-value">2</span>
+    </div>
+    <input type="range" id="distance-weight" min="1" max="3" value="2" step="1">
+  </div>
+  <button id="select-path">Select Optimum Path</button>
+  <svg width="500" height="400"></svg>
+
+  <script>
+    // Set constant coordinates for the start and end points
+    var origin = { x: 40, y: 200 };
+    var destination = { x: 450, y: 200 };
+
+    // Create the SVG container
+    var svg = d3.select("svg");
+
+    // Draw the curves
+    var curvesData = [
+      { color: "red", curvature: 0 },
+      { color: "green", curvature: 150 },
+      { color: "blue", curvature: -350 }
+    ];
+
+    var curves = svg.selectAll("path")
+      .data(curvesData)
+      .enter()
+      .append("path")
+      .attr("d", d => {
+        var control = [
+          (origin.x + destination.x) / 2,
+          (origin.y + destination.y) / 2 + d.curvature
+        ];
+        return `M${origin.x},${origin.y} Q${control[0]},${control[1]} ${destination.x},${destination.y}`;
+      })
+      .attr("fill", "none")
+      .attr("stroke", d => d.color)
+      .attr("stroke-width", (d, i) => i === 0 ? 6 : 2);
+
+    // Draw the starting point circle
+    svg.append("circle")
+      .attr("cx", origin.x)
+      .attr("cy", origin.y)
+      .attr("r", 5)
+      .attr("fill", "black");
+
+    // Add label for the starting point
+    svg.append("text")
+      .attr("x", origin.x - 40)
+      .attr("y", origin.y - 10)
+      .text("Start")
+      .attr("fill", "black");
+
+    // Draw the ending point circle
+    svg.append("circle")
+      .attr("cx", destination.x)
+      .attr("cy", destination.y)
+      .attr("r", 5)
+      .attr("fill", "black");
+
+    // Add label for the ending point
+    svg.append("text")
+      .attr("x", destination.x + 10)
+      .attr("y", destination.y - 10)
+      .text("End")
+      .attr("fill", "black");
+      
+    // Add label for the lines 
+    svg.append("text")
+      .attr("x", 245)
+      .attr("y", 192)
+      .text("$$$")
+      .attr("fill", "red");
+      
+  // Add label for the lines 
+    svg.append("text")
+      .attr("x", 248)
+      .attr("y", 47)
+      .text("$")
+      .attr("fill", "blue");
+      
+        // Add label for the lines 
+    svg.append("text")
+      .attr("x", 248)
+      .attr("y", 295)
+      .text("$$")
+      .attr("fill", "green");
+
+    // Add event listeners for the weight sliders
+    var curvatureWeightSlider = d3.select("#curvature-weight");
+    var curvatureWeightValue = d3.select("#curvature-weight-value");
+    var distanceWeightSlider = d3.select("#distance-weight");
+    var distanceWeightValue = d3.select("#distance-weight-value");
+
+    curvatureWeightSlider.on("input", function() {
+      curvatureWeightValue.text(this.value);
+    });
+
+    distanceWeightSlider.on("input", function() {
+      distanceWeightValue.text(this.value);
+    });
+
+    // Select path based on curvature and distance weight
+    d3.select("#select-path").on("click", selectPath);
+
+    function selectPath() {
+      var curvatureWeight = parseFloat(curvatureWeightSlider.property("value"));
+      var distanceWeight = parseFloat(distanceWeightSlider.property("value"));
+var score = 0
+      var paths = curvesData.map(curve => {
+        var curvatureScore = curve.curvature * curvatureWeight;
+        var distanceScore = Math.sqrt(Math.pow(origin.x - destination.x, 2) + Math.pow(origin.y - destination.y, 2)) * distanceWeight;
+        
+        if (curvatureWeight < distanceWeight)
+{
+        score = Math.abs(distanceScore);
+}
+else if (curvatureWeight > distanceWeight)
+{
+        score = Math.abs(curvatureScore)
+}
+else {
+        score = 999 
+}
+        return { curve, score };
+      });
+var selectedPath = {}
+if (score!==999){
+      var maxScore = d3.max(paths, d => d.score);
+       selectedPath = paths.find(d => d.score === maxScore).curve;
+}
+else{
+ selectedPath = paths[1].curve
+}
+
+      curves.attr("stroke-width", d => (d === selectedPath) ? 6 : 2);
+    }
+  </script>
+</body>
+</html>
